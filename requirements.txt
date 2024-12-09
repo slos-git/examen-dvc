@@ -1,3 +1,5 @@
 flake8
 requests
 dvc
+pandas
+scikit-learn

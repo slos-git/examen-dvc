@@ -46,9 +46,9 @@ def main(raw_data_relative_path=raw_data_relative_path,
     """
     Upload data from AWS s3 in raw data folder
     """
-    import_raw_data(raw_data_relative_path, filenames, bucket_folder_url)
     logger = logging.getLogger(__name__)
-    logger.info('making raw data set')
+    logger.info('Importing raw dataset')
+    import_raw_data(raw_data_relative_path, filenames, bucket_folder_url)
 
 
 if __name__ == '__main__':
