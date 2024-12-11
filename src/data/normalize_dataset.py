@@ -22,22 +22,18 @@ def main(processed_data_rel_path=processed_data_relative_path):
     # Normalize
     scaler = StandardScaler()
 
-    X_train_date = X_train['date']
-    X_train = X_train.drop(['date'], axis=1)
+    X_train.drop(['date'], axis=1, inplace=True)
     X_columns = X_train.columns
 
     scaler.fit(X_train)
 
     X_train_scaled = pd.DataFrame(scaler.transform(X_train),
                                   columns=X_columns)
-    X_train_scaled = pd.concat([X_train_date, X_train_scaled], axis=1)
 
-    X_test_date = X_test['date']
-    X_test = X_test.drop(['date'], axis=1)
+    X_test.drop(['date'], axis=1, inplace=True)
 
     X_test_scaled = pd.DataFrame(scaler.transform(X_test),
                                  columns=X_columns)
-    X_test_scaled = pd.concat([X_test_date, X_test_scaled], axis=1)
 
     # Save dataframes to their respective output file paths
     for set, filename in zip([X_train_scaled, X_test_scaled],

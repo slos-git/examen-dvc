@@ -44,10 +44,11 @@ def main(raw_data_relative_path=raw_data_relative_path,
          bucket_folder_url=bucket_folder_url
          ):
     """
-    Upload data from AWS s3 in raw data folder
+    Upload data from AWS s3 in raw data folder.
     """
     logger = logging.getLogger(__name__)
     logger.info('Importing raw dataset')
+
     import_raw_data(raw_data_relative_path, filenames, bucket_folder_url)
 
 

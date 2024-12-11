@@ -22,11 +22,9 @@ def main(processed_data_rel_path=processed_data_relative_path,
     # Import datasets
     X_train = pd.read_csv(f"{processed_data_rel_path}/X_train_scaled.csv",
                           sep=",")
-    X_train = X_train.drop(['date'], axis=1)
 
     X_test = pd.read_csv(f"{processed_data_rel_path}/X_test_scaled.csv",
                          sep=",")
-    X_test = X_test.drop(['date'], axis=1)
 
     y_train = pd.read_csv(f"{processed_data_rel_path}/y_train.csv", sep=",")
     y_test = pd.read_csv(f"{processed_data_rel_path}/y_test.csv", sep=",")
