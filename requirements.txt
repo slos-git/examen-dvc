@@ -3,3 +3,4 @@ requests
 dvc
 pandas
 scikit-learn
+joblib
