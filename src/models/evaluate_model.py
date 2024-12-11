@@ -43,7 +43,7 @@ def main(processed_data_rel_path=processed_data_relative_path,
 
     # Save metrics
     metrics = {"mse": mse, "r2": r2}
-    metrics_filename = f"{metrics_rel_path}/metrics.json"
+    metrics_filename = f"{metrics_rel_path}/score.json"
     json.dump(metrics, open(metrics_filename, 'w'))
 
 

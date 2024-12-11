@@ -1,6 +1,7 @@
 
 import os
 import logging
+from check_structure import check_existing_folder
 import pandas as pd
 from sklearn.model_selection import train_test_split
 
@@ -15,6 +16,9 @@ def main(raw_data_relative_path=raw_data_relative_path,
     """
     logger = logging.getLogger(__name__)
     logger.info('Splitting raw dataset')
+
+    if check_existing_folder(processed_data_relative_path):
+        os.makedirs(processed_data_relative_path)
 
     # Import dataset
     df_raw = pd.read_csv(f"{raw_data_relative_path}/raw.csv", sep=",")
